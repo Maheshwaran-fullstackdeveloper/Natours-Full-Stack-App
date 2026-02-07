@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "npx nodemon server.js",
-    "start:prod": "cross-env NODE_ENV=production npx nodemon server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js",
     "debug": "ndb server.js",
     "import-data": "node dev-data/data/import-dev-data.js --import",
     "delete-data": "node dev-data/data/import-dev-data.js --delete",
