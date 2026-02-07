@@ -16,12 +16,13 @@ const usersRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const compression = require('compression');
 
 const scriptSrcUrls = [
   'https://unpkg.com/',
   'https://tile.openstreetmap.org',
   'https://cdn.jsdelivr.net',
-  ' https://js.stripe.com/v3/',
+  'https://js.stripe.com/v3/',
 ];
 const styleSrcUrls = [
   'https://unpkg.com/',
@@ -37,6 +38,8 @@ const connectSrcUrls = [
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
 const app = express();
+
+app.use(compression());
 
 // Setting Pug as the view engine for Server Side Rendering
 app.set('view engine', 'pug');
