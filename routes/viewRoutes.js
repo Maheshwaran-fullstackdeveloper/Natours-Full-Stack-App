@@ -13,7 +13,7 @@ const { createBookingCheckout } = require('../controllers/bookingController');
 const router = express.Router();
 
 // Route for rendering the home page
-router.get('/', createBookingCheckout, isLoggedIn, getOverview);
+router.get('/', isLoggedIn, getOverview);
 
 router.get('/tour/:slug', isLoggedIn, getTour);
 
@@ -23,6 +23,6 @@ router.get('/signup', isLoggedIn, getSignupForm);
 
 router.get('/me', protect, getAccount);
 
-router.get('/my-tours', protect, getMyTours);
+router.get('/my-tours', createBookingCheckout, protect, getMyTours);
 
 module.exports = router;
