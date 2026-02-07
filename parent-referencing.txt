@@ -1,0 +1,7 @@
+1. Create a model, routes and controller file for review
+2. Design controller to create and get reviews
+3. Populate fields in ReviewModal using pre
+4. Make it virtually appear in tours and unpopulate detailed tour details
+5. Create a route in tours so that it gets access to tour id and user id to create and get reviews(duplication in reviews routes)
+6. Redirect and Merge tourRoutes to reviewRoutes
+7. Filter reviews for particular tour using tour id in params
