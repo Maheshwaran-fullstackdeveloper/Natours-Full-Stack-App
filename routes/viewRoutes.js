@@ -6,11 +6,14 @@ const {
   getSignupForm,
   getAccount,
   getMyTours,
+  alerts,
 } = require('../controllers/viewsController');
 const { isLoggedIn, protect } = require('../controllers/authController');
 const { createBookingCheckout } = require('../controllers/bookingController');
 
 const router = express.Router();
+
+router.use(alerts);
 
 // Route for rendering the home page
 router.get('/', isLoggedIn, getOverview);

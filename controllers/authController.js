@@ -111,6 +111,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
   // Grant access to protected route
   req.user = currentUser;
+  // Set local variable to access them in pug templates
   res.locals.user = currentUser;
 
   next();
