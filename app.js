@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -38,6 +39,8 @@ const connectSrcUrls = [
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 
 const app = express();
+
+app.use(cors()); // Enable CORS for all routes and origins.
 
 app.use(compression());
 
